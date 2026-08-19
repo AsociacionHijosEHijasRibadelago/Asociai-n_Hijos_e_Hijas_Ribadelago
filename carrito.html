@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Carrito - Camiseta del Recuerdo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #ffffff;
+            color: #172b45;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .volver {
+            display: inline-block;
+            margin-top: 10px;
+            color: #172b45;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .contenido {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .producto-carrito {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #eeeeee;
+            border-radius: 12px;
+        }
+
+        .producto-info {
+            flex: 1;
+        }
+
+        .producto-info h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+
+        .producto-info p {
+            margin: 5px 0;
+        }
+
+        .eliminar {
+            border: none;
+            background: #ffffff;
+            color: #172b45;
+            cursor: pointer;
+            font-size: 20px;
+            padding: 8px 12px;
+        }
+
+        .total {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eeeeee;
+            text-align: right;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .vacio {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🛍️ Mi carrito</h1>
+    <a href="camiseta.html" class="volver">← Volver a la camiseta</a>
+</header>
+
+<main class="contenido">
+
+    <div id="carrito"></div>
+
+    <div id="total" class="total"></div>
+
+</main>
+
+<script>
+
+function mostrarCarrito() {
+
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    const contenedor = document.getElementById("carrito");
+    const totalElemento = document.getElementById("total");
+
+    contenedor.innerHTML = "";
+    totalElemento.innerHTML = "";
+
+    if (carrito.length === 0) {
+
+        contenedor.innerHTML = `
+            <div class="vacio">
+                El carrito está vacío.
+            </div>
+        `;
+
+        return;
+    }
+
+    let total = 0;
+
+    carrito.forEach(function(producto, indice) {
+
+        const precio = 15;
+        const subtotal = precio * producto.cantidad;
+
+        total += subtotal;
+
+        contenedor.innerHTML += `
+            <div class="producto-carrito">
+
+                <div class="producto-info">
+
+                    <h2>${producto.producto}</h2>
+
+                    <p><strong>Talla:</strong> ${producto.talla}</p>
+
+                    <p><strong>Cantidad:</strong> ${producto.cantidad}</p>
+
+                    <p><strong>Precio:</strong> ${precio.toFixed(2)} €</p>
+
+                </div>
+
+                <button class="eliminar" onclick="eliminarProducto(${indice})">
+                    🗑️
+                </button>
+
+            </div>
+        `;
+    });
+
+    totalElemento.innerHTML = `Total: ${total.toFixed(2)} €`;
+}
+
+
+function eliminarProducto(indice) {
+
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    carrito.splice(indice, 1);
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    mostrarCarrito();
+}
+
+
+mostrarCarrito();
+
+</script>
+
+</body>
+</html>
