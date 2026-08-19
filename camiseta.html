@@ -572,11 +572,21 @@ function continuarCompra() {
 
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+    const tallaSeleccionada = talla.textContent.trim();
+
+const productoExistente = carrito.find(function(producto) {
+    return producto.talla === tallaSeleccionada;
+});
+
+if (productoExistente) {
+    productoExistente.cantidad += cantidad;
+} else {
     carrito.push({
         producto: "Camiseta del Recuerdo",
-        talla: talla.textContent.trim(),
+        talla: tallaSeleccionada,
         cantidad: cantidad
     });
+}
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
