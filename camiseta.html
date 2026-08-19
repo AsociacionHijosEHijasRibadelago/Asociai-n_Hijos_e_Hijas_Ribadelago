@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Camiseta del Recuerdo - Asociación Hijos e Hijas de Ribadelago</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -17,98 +18,286 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f8f6f1;
+    background: #faf9f7;
     color: #172b45;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
-.pagina {
-    min-height: 100vh;
-    padding: 45px 25px;
-    text-align: center;
-}
+/* CABECERA */
 
-.titulo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 42px;
-    font-weight: 400;
-    margin-bottom: 35px;
-}
-
-.producto {
-    max-width: 850px;
-    margin: 0 auto;
+header {
+    height: 76px;
     background: white;
-    padding: 35px;
-    border-radius: 12px;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-}
-
-.imagen-producto img {
-    width: 100%;
-    max-width: 650px;
-    height: auto;
-    display: block;
-    margin: 0 auto 30px;
-}
-
-.nombre {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 34px;
-    font-weight: 400;
-    margin-bottom: 10px;
-}
-
-.precio {
-    font-size: 22px;
-    margin-bottom: 30px;
-}
-
-.opciones {
-    max-width: 450px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.opciones label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-}
-
-.opciones select,
-.opciones input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 22px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
-    background: white;
-}
-
-.boton {
-    display: inline-block;
-    background: #172b45;
-    color: white;
-    padding: 14px 35px;
-    border-radius: 6px;
-    text-decoration: none;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.boton:hover {
-    opacity: 0.9;
+    border-bottom: 1px solid #e5e2dc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
 }
 
 .volver {
-    display: inline-block;
-    margin-top: 30px;
     color: #172b45;
     text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.volver span {
+    font-size: 27px;
+    margin-right: 8px;
+    vertical-align: -2px;
+}
+
+header h1 {
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.carrito {
+    font-size: 30px;
+}
+
+/* CONTENIDO */
+
+.contenido {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 25px;
+}
+
+/* PRODUCTO */
+
+.producto-principal {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 35px;
+    align-items: stretch;
+}
+
+/* FOTO */
+
+.foto-producto {
+    background: #eee9e1;
+    border-radius: 14px;
+    overflow: hidden;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foto-producto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* INFORMACIÓN */
+
+.informacion {
+    background: white;
+    border-radius: 14px;
+    padding: 35px;
+    border: 1px solid #e6e1d9;
+}
+
+.informacion h2 {
+    font-size: 42px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: #172b45;
+}
+
+.decoracion {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.decoracion::before,
+.decoracion::after {
+    content: "";
+    height: 2px;
+    background: #c59b52;
+    flex: 1;
+}
+
+.corazon {
+    color: #c59b52;
+    font-size: 22px;
+}
+
+.descripcion {
+    font-size: 17px;
+    line-height: 1.75;
+    color: #222;
+    margin-bottom: 25px;
+}
+
+/* PRECIO */
+
+.precio {
+    background: #faf8f5;
+    border: 1px solid #e4ded5;
+    border-radius: 12px;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.precio strong {
+    display: block;
+    font-size: 36px;
+    color: #111;
+}
+
+.precio span {
+    display: block;
+    margin-top: 5px;
+    color: #333;
+}
+
+/* TALLAS */
+
+.seccion-tallas {
+    background: white;
+    border: 1px solid #e3dfd8;
+    border-radius: 14px;
+    margin-top: 30px;
+    padding: 28px;
+}
+
+.seccion-tallas h3 {
+    font-size: 20px;
+    margin-bottom: 22px;
+}
+
+.grupos-tallas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+
+.grupo h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.tallas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.talla {
+    background: white;
+    border: 1px solid #cfcac2;
+    border-radius: 8px;
+    padding: 14px 20px;
+    cursor: pointer;
     font-size: 15px;
+    transition: 0.2s;
+}
+
+.talla:hover {
+    border-color: #172b45;
+}
+
+.talla.seleccionada {
+    background: #172b45;
+    color: white;
+    border-color: #172b45;
+}
+
+/* CANTIDAD */
+
+.cantidad {
+    margin-top: 30px;
+}
+
+.cantidad label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.cantidad input {
+    width: 120px;
+    padding: 13px;
+    border: 1px solid #cfcac2;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* BOTÓN */
+
+.continuar {
+    width: 100%;
+    margin-top: 28px;
+    padding: 17px;
+    background: #172b45;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.continuar:hover {
+    opacity: 0.9;
+}
+
+/* MÓVIL */
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 0 18px;
+        height: 65px;
+    }
+
+    header h1 {
+        font-size: 17px;
+    }
+
+    .volver {
+        font-size: 14px;
+    }
+
+    .carrito {
+        font-size: 25px;
+    }
+
+    .contenido {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    .producto-principal {
+        grid-template-columns: 1fr;
+    }
+
+    .foto-producto {
+        min-height: 400px;
+    }
+
+    .informacion {
+        padding: 25px;
+    }
+
+    .informacion h2 {
+        font-size: 32px;
+    }
+
+    .grupos-tallas {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
 }
 
 </style>
@@ -116,39 +305,125 @@ body {
 
 <body>
 
-<main class="pagina">
+<header>
 
-    <h1 class="titulo">
-        NUESTROS PRODUCTOS
-    </h1>
+    <a href="productos.html" class="volver">
+        <span>‹</span> Volver al catálogo
+    </a>
 
-    <div class="producto">
+    <h1>CAMISETA DEL RECUERDO</h1>
 
-        <div class="imagen-producto">
-            <img src="0da05662-7793-425c-8855-b523945c8d8b.jpeg"
-                 alt="Camiseta del Recuerdo">
+    <div class="carrito">🛍️</div>
+
+</header>
+
+
+<main class="contenido">
+
+    <section class="producto-principal">
+
+        <!-- FOTO DE LA CAMISETA -->
+
+        <div class="foto-producto">
+            <img
+                src="0da05662-7793-425c-8855-b523945c8d8b.jpeg"
+                alt="Camiseta del Recuerdo">
         </div>
 
-        <h2 class="nombre">
-            Camiseta del Recuerdo
-        </h2>
 
-        <p class="precio">
-            Precio próximamente
-        </p>
+        <!-- INFORMACIÓN -->
 
-        <div class="opciones">
+        <div class="informacion">
 
-            <label for="talla">Talla</label>
+            <h2>
+                CAMISETA<br>
+                DEL RECUERDO
+            </h2>
 
-            <select id="talla">
-                <option value="">Selecciona una talla</option>
-                <option value="9-11">9–11 años</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-            </select>
+            <div class="decoracion">
+                <span class="corazon">♥</span>
+            </div>
+
+            <p class="descripcion">
+                Camiseta oficial de la Asociación Hijos e Hijas de Ribadelago.
+                <br><br>
+                Un recuerdo de nuestro pueblo que nos une y nos representa.
+                Con tu compra apoyas el trabajo de la asociación y la vida de Ribadelago.
+            </p>
+
+            <div class="precio">
+                <strong>15,00 €</strong>
+                <span>Impuestos incluidos</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TALLAS -->
+
+    <section class="seccion-tallas">
+
+        <h3>🧵 1. ELIGE TU TALLA</h3>
+
+        <div class="grupos-tallas">
+
+            <div class="grupo">
+
+                <h4>NIÑO/A</h4>
+
+                <div class="tallas">
+
+                    <button class="talla" onclick="seleccionarTalla(this)">
+                        9 años
+                    </button>
+
+                    <button class="talla" onclick="seleccionarTalla(this)">
+                        10 años
+                    </button>
+
+                    <button class="talla" onclick="seleccionarTalla(this)">
+                        11 años
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="grupo">
+
+                <h4>ADULTO</h4>
+
+                <div class="tallas">
+
+                    <button class="talla" onclick="seleccionarTalla(this)">
+                        S
+                    </button>
+
+                    <button class="talla" onclick="seleccionarTalla(this)">
+                        M
+                    </button>
+
+                    <button class="talla" onclick="seleccionarTalla(this)">
+                        L
+                    </button>
+
+                    <button class="talla" onclick="seleccionarTalla(this)">
+                        XL
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CANTIDAD -->
+
+        <div class="cantidad">
 
             <label for="cantidad">Cantidad</label>
 
@@ -156,22 +431,53 @@ body {
                 type="number"
                 id="cantidad"
                 min="1"
-                value="1"
-            >
+                value="1">
 
         </div>
 
-        <button class="boton">
+
+        <button class="continuar" onclick="continuarCompra()">
             CONTINUAR
         </button>
 
-    </div>
-
-    <a href="productos.html" class="volver">
-        ← Volver a productos
-    </a>
+    </section>
 
 </main>
+
+
+<script>
+
+function seleccionarTalla(boton) {
+
+    document.querySelectorAll(".talla").forEach(function(talla) {
+        talla.classList.remove("seleccionada");
+    });
+
+    boton.classList.add("seleccionada");
+}
+
+
+function continuarCompra() {
+
+    const talla = document.querySelector(".talla.seleccionada");
+
+    if (!talla) {
+        alert("Por favor, selecciona una talla.");
+        return;
+    }
+
+    const cantidad = document.getElementById("cantidad").value;
+
+    alert(
+        "Talla seleccionada: " +
+        talla.textContent.trim() +
+        "\nCantidad: " +
+        cantidad
+    );
+
+}
+
+</script>
 
 </body>
 </html>
