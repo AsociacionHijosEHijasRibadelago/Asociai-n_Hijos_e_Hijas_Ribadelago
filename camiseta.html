@@ -80,7 +80,7 @@ header h1 {
 .foto-producto {
     background: #eee9e1;
     border-radius: 14px;
-    overflow: hidden;
+    overflow: visible;
     min-height: 520px;
     display: flex;
     align-items: center;
@@ -88,10 +88,14 @@ header h1 {
 }
 
 .foto-producto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
     display: block;
+    transition: transform 0.3s ease;
+}
+    .foto-producto img:hover {
+    transform: scale(1.35);
 }
 
 /* INFORMACIÓN */
