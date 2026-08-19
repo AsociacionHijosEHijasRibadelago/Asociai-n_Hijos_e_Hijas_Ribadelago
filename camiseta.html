@@ -217,6 +217,42 @@ header h1 {
 .cantidad {
     margin-top: 30px;
 }
+    .cantidad-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+
+.cantidad-control button {
+    width: 45px;
+    height: 45px;
+    border: 1px solid #cfcac2;
+    background: white;
+    color: #172b45;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.cantidad-control button:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.cantidad-control button:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+.cantidad-control input {
+    width: 60px;
+    height: 45px;
+    padding: 0;
+    border: 1px solid #cfcac2;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    text-align: center;
+    font-size: 16px;
+}
 
 .cantidad label {
     display: block;
@@ -429,15 +465,23 @@ header h1 {
 
         <div class="cantidad">
 
-            <label for="cantidad">Cantidad</label>
+    <label>Cantidad</label>
 
-            <input
-                type="number"
-                id="cantidad"
-                min="1"
-                value="1">
+    <div class="selector-cantidad">
 
-        </div>
+        <button type="button" onclick="cambiarCantidad(-1)">
+            −
+        </button>
+
+        <span id="cantidad">1</span>
+
+        <button type="button" onclick="cambiarCantidad(1)">
+            +
+        </button>
+
+    </div>
+
+</div>
 
 
         <button class="continuar" onclick="continuarCompra()">
@@ -450,7 +494,20 @@ header h1 {
 
 
 <script>
+function cambiarCantidad(valor) {
 
+    const cantidad = document.getElementById("cantidad");
+
+    let numero = parseInt(cantidad.textContent);
+
+    numero = numero + valor;
+
+    if (numero < 1) {
+        numero = 1;
+    }
+
+    cantidad.textContent = numero;
+}
 function seleccionarTalla(boton) {
 
     document.querySelectorAll(".talla").forEach(function(talla) {
