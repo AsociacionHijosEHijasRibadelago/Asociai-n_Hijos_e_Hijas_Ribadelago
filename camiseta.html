@@ -566,15 +566,21 @@ function continuarCompra() {
         return;
     }
 
-    const cantidad = document.getElementById("cantidad").value;
-
-    alert(
-        "Talla seleccionada: " +
-        talla.textContent.trim() +
-        "\nCantidad: " +
-        cantidad
+    const cantidad = parseInt(
+        document.getElementById("cantidad").textContent
     );
 
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    carrito.push({
+        producto: "Camiseta del Recuerdo",
+        talla: talla.textContent.trim(),
+        cantidad: cantidad
+    });
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    alert("Producto añadido al carrito 🛍️");
 }
 
 </script>
