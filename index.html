@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hijos e Hijas de Ribadelago</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8f6f1;
+            color: #172b45;
+        }
+
+        .inicio {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 25px;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            color: #172b45;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: 32px;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .descripcion {
+            max-width: 650px;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 35px;
+        }
+
+        .boton {
+            display: inline-block;
+            background: #172b45;
+            color: white;
+            text-decoration: none;
+            padding: 16px 55px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: 0.2s;
+        }
+
+        .boton:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        #catalogo {
+            min-height: 100vh;
+            padding: 60px 25px;
+            background: white;
+        }
+
+        .contenedor {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .titulo {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 40px;
+        }
+
+        .producto {
+            max-width: 450px;
+            margin: auto;
+            background: #f8f6f1;
+            border-radius: 18px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .imagen-camiseta {
+            height: 350px;
+            background: #e9e7e2;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .producto h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .precio {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #172b45;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PÁGINA DE INICIO -->
+
+    <section class="inicio">
+
+        <div class="logo">
+            LOGO
+        </div>
+
+        <h1>HIJOS E HIJAS DE RIBADELAGO</h1>
+
+        <p class="descripcion">
+            Aquí aparecerá próximamente la explicación de la Asociación
+            Hijos e Hijas de Ribadelago.
+        </p>
+
+        <a href="#catalogo" class="boton">
+            COMPRAR
+        </a>
+
+    </section>
+
+
+    <!-- CATÁLOGO -->
+
+    <section id="catalogo">
+
+        <div class="contenedor">
+
+            <h2 class="titulo">
+                NUESTROS PRODUCTOS
+            </h2>
+
+            <div class="producto">
+
+                <div class="imagen-camiseta">
+                    AQUÍ PONDREMOS LA FOTO DE LA CAMISETA
+                </div>
+
+                <h3>
+                    Camiseta del Recuerdo
+                </h3>
+
+                <p class="precio">
+                    Precio próximamente
+                </p>
+
+                <a href="#" class="boton">
+                    VER PRODUCTO
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        Hijos e Hijas de Ribadelago
+    </footer>
+
+</body>
+</html>
