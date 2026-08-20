@@ -582,10 +582,11 @@ if (productoExistente) {
     productoExistente.cantidad += cantidad;
 } else {
     carrito.push({
-        producto: "Camiseta del Recuerdo",
-        talla: tallaSeleccionada,
-        cantidad: cantidad
-    });
+    producto: "Camiseta del Recuerdo",
+    talla: tallaSeleccionada,
+    cantidad: cantidad,
+    precio: 15
+});
 }
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
