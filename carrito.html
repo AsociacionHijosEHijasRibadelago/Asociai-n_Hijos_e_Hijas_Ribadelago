@@ -136,26 +136,34 @@ function mostrarCarrito() {
         total += subtotal;
 
         contenedor.innerHTML += `
-            <div class="producto-carrito">
+    <div class="producto-carrito">
 
-                <div class="producto-info">
+        <div class="producto-info">
 
-                    <h2>${producto.producto}</h2>
+            <h2>${producto.producto}</h2>
 
-                    <p><strong>Talla:</strong> ${producto.talla}</p>
+            <p><strong>Talla:</strong> ${producto.talla}</p>
 
-                    <p><strong>Cantidad:</strong> ${producto.cantidad}</p>
+            <p><strong>Cantidad:</strong></p>
 
-                    <p><strong>Precio:</strong> ${precio.toFixed(2)} €</p>
+            <div class="control-cantidad">
+                <button onclick="cambiarCantidadCarrito(${indice}, -1)">−</button>
 
-                </div>
+                <span>${producto.cantidad}</span>
 
-                <button class="eliminar" onclick="eliminarProducto(${indice})">
-                    🗑️
-                </button>
-
+                <button onclick="cambiarCantidadCarrito(${indice}, 1)">+</button>
             </div>
-        `;
+
+            <p><strong>Precio:</strong> ${subtotal.toFixed(2)} €</p>
+
+        </div>
+
+        <button class="eliminar" onclick="eliminarProducto(${indice})">
+            🗑️
+        </button>
+
+    </div>
+`;
     });
 
     totalElemento.innerHTML = `Total: ${total.toFixed(2)} €`;
@@ -172,7 +180,21 @@ function eliminarProducto(indice) {
 
     mostrarCarrito();
 }
+    
+function cambiarCantidadCarrito(indice, cambio) {
 
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    carrito[indice].cantidad += cambio;
+
+    if (carrito[indice].cantidad <= 0) {
+        carrito.splice(indice, 1);
+    }
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    mostrarCarrito();
+}
 
 mostrarCarrito();
 
