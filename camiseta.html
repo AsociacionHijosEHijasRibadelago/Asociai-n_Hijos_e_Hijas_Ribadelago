@@ -590,7 +590,7 @@ if (productoExistente) {
 }
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
-
+    document.getElementById("cantidad").textContent = "1";
     alert("Producto añadido al carrito 🛍️");
 }
 
