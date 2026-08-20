@@ -188,10 +188,10 @@
 
             carrito.forEach(producto => {
 
-                const subtotal =
-                    producto.precio * producto.cantidad;
+            const precio = Number(producto.precio) || 15;
+            const subtotal = precio * producto.cantidad;
 
-                total += subtotal;
+            total += subtotal;
 
                 contenedor.innerHTML += `
                     <div class="producto-pedido">
