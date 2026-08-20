@@ -211,26 +211,92 @@
 
         function enviarPedido() {
 
-            const nombre =
-                document.getElementById("nombre").value.trim();
+    const nombre =
+        document.getElementById("nombre").value.trim();
 
-            const telefono =
-                document.getElementById("telefono").value.trim();
+    const telefono =
+        document.getElementById("telefono").value.trim();
 
-            const observaciones =
-                document.getElementById("observaciones").value.trim();
+    const observaciones =
+        document.getElementById("observaciones").value.trim();
 
-            if (!nombre || !telefono) {
+    if (!nombre || !telefono) {
+        alert("Por favor, completa tu nombre y número de teléfono.");
+        return;
+    }
 
-                alert("Por favor, completa tu nombre y número de teléfono.");
+    // Recuperar el carrito
+    const carrito =
+        JSON.parse(localStorage.getItem("carrito")) || [];
 
-                return;
-            }
+    if (carrito.length === 0) {
+        alert("El carrito está vacío.");
+        return;
+    }
 
-            alert("Pedido preparado correctamente.");
+    // Calcular el total
+    let total = 0;
 
-        }
+    carrito.forEach(producto => {
 
+        const precio = Number(producto.precio) || 15;
+
+        total += precio * producto.cantidad;
+
+    });
+
+    // Crear el listado de artículos
+    const articulos = carrito.map(producto => {
+
+        return `${producto.producto} - Talla ${producto.talla} x${producto.cantidad}`;
+
+    }).join(" | ");
+
+    // Datos que enviaremos a Google Sheets
+    const datos = {
+
+        nombre: nombre,
+
+        telefono: telefono,
+
+        articulos: articulos,
+
+        total: total,
+
+        observaciones: observaciones
+
+    };
+
+    // URL de nuestro Google Apps Script
+    const url =
+        "https://script.google.com/macros/s/AKfycbzkl_j2rFFEwcZQvyjzZQdmfmnT6vP-Kv_H-l_8nmVyeYhMDjisoSwOiAth54XNljcv/exec";
+
+    fetch(url, {
+
+        method: "POST",
+
+        body: JSON.stringify(datos)
+
+    })
+
+    .then(() => {
+
+        alert("¡Pedido enviado correctamente!");
+
+        // Vaciar el carrito
+        localStorage.removeItem("carrito");
+
+    })
+
+    .catch(error => {
+
+        console.error(error);
+
+        alert("Ha ocurrido un error al enviar el pedido.");
+
+    });
+
+}
 
         mostrarPedido();
 
