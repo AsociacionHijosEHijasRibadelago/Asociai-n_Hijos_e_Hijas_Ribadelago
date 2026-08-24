@@ -322,7 +322,9 @@ if (performance.getEntriesByType("navigation")[0]?.type === "reload") {
 
         observaciones: observaciones,
 
-        pago: pago.value
+        pago: pago.value,
+
+        ubicacion: localStorage.getItem("ubicacionPedido") || "Web"
 
     };
 
