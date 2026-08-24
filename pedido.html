@@ -258,10 +258,14 @@ if (performance.getEntriesByType("navigation")[0]?.type === "reload") {
             
     if (!pago) {
     alert("Por favor, selecciona una forma de pago.");
+    boton.disabled = false;
+    boton.textContent = "ENVIAR PEDIDO";
     return;
 }
     if (!nombre || !telefono) {
         alert("Por favor, completa tu nombre y número de teléfono.");
+        boton.disabled = false;
+        boton.textContent = "ENVIAR PEDIDO";
         return;
     }
 
