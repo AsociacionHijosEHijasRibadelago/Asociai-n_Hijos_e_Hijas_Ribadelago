@@ -202,5 +202,17 @@
         Hijos e Hijas de Ribadelago
     </footer>
 
+    <script>
+
+// Detectar desde qué QR se ha accedido
+const parametros = new URLSearchParams(window.location.search);
+const ubicacion = parametros.get("ubicacion");
+
+if (ubicacion) {
+    localStorage.setItem("ubicacionPedido", ubicacion);
+}
+
+</script>
+    
 </body>
 </html>
