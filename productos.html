@@ -93,7 +93,20 @@
         .boton:hover {
             opacity: 0.9;
         }
-
+        
+        .boton-carrito-final {
+            display: inline-block;
+            margin-top: 30px;
+            background: #c59b52;
+            color: white;
+            text-decoration: none;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+        }
+        
         .volver {
             display: inline-block;
             margin-top: 35px;
@@ -142,6 +155,10 @@ if (performance.getEntriesByType("navigation")[0]?.type === "reload") {
 
         </div>
 
+            <a href="carrito.html" class="boton-carrito-final">
+                🛍️ IR AL CARRITO
+            </a>
+        
         <a href="index.html" class="volver">
             ← Volver al inicio
         </a>
