@@ -238,7 +238,12 @@ if (performance.getEntriesByType("navigation")[0]?.type === "reload") {
 
 
         function enviarPedido() {
+            
+    const boton = document.getElementById("botonEnviar");
 
+        boton.disabled = true;
+        boton.textContent = "ENVIANDO PEDIDO...";
+            
     const nombre =
         document.getElementById("nombre").value.trim();
 
