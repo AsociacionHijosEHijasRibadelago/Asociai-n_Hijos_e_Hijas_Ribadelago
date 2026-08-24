@@ -248,6 +248,13 @@ if (performance.getEntriesByType("navigation")[0]?.type === "reload") {
     const observaciones =
         document.getElementById("observaciones").value.trim();
 
+    const pago =
+    document.querySelector('input[name="pago"]:checked');
+            
+    if (!pago) {
+    alert("Por favor, selecciona una forma de pago.");
+    return;
+}
     if (!nombre || !telefono) {
         alert("Por favor, completa tu nombre y número de teléfono.");
         return;
