@@ -327,6 +327,9 @@ if (performance.getEntriesByType("navigation")[0]?.type === "reload") {
 
     .then(() => {
 
+        boton.disabled = true;
+        boton.textContent = "PEDIDO REALIZADO ✓";
+        
         alert("¡Pedido enviado correctamente!");
 
         // Vaciar el carrito
