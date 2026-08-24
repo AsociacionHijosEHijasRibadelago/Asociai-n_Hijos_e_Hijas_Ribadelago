@@ -156,7 +156,29 @@ if (performance.getEntriesByType("navigation")[0]?.type === "reload") {
             <label for="observaciones">Observaciones</label>
             <textarea id="observaciones"
                 placeholder="Si quieres añadir algún comentario, escríbelo aquí..."></textarea>
+            
+    <div class="pago">
 
+    <h2>Forma de pago</h2>
+
+    <p class="pregunta-pago">¿Cómo quieres pagar tu pedido?</p>
+
+    <label class="opcion-pago">
+        <input type="radio" name="pago" value="Efectivo">
+        💶 Efectivo
+    </label>
+
+    <label class="opcion-pago">
+        <input type="radio" name="pago" value="Bizum">
+        📱 Bizum
+    </label>
+
+    <div class="aviso-pago">
+        ℹ️ El pago se realizará en el momento de la entrega del pedido.
+        No se realizará ningún cobro online al efectuar el pedido.
+    </div>
+
+</div>
             <div class="resumen">
 
                 <h2>Resumen del pedido</h2>
