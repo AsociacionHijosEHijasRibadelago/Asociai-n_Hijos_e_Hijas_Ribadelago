@@ -701,12 +701,14 @@ if (productoExistente) {
 }
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    actualizarContadorCarrito();
     
     document.getElementById("cantidad").textContent = "1";
     
     alert("Producto añadido al carrito 🛍️");
 }
-
+actualizarContadorCarrito();
 </script>
 
 </body>
