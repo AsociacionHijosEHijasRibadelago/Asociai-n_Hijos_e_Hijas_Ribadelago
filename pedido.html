@@ -335,6 +335,9 @@ if (performance.getEntriesByType("navigation")[0]?.type === "reload") {
         // Vaciar el carrito
         localStorage.removeItem("carrito");
 
+        // Volver al inicio
+        window.location.href = "index.html";
+
     })
 
     .catch(error => {
