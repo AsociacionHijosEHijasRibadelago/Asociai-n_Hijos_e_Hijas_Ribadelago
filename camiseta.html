@@ -622,6 +622,28 @@ if (performance.getEntriesByType("navigation")[0]?.type === "reload") {
 
 
 <script>
+    function actualizarContadorCarrito() {
+
+    const carrito =
+        JSON.parse(localStorage.getItem("carrito")) || [];
+
+    let cantidadTotal = 0;
+
+    carrito.forEach(function(producto) {
+        cantidadTotal += producto.cantidad;
+    });
+
+    const contador =
+        document.getElementById("contador-carrito");
+
+    contador.textContent = cantidadTotal;
+
+    if (cantidadTotal === 0) {
+        contador.style.display = "none";
+    } else {
+        contador.style.display = "flex";
+    }
+}
 function cambiarCantidad(valor) {
 
     const cantidad = document.getElementById("cantidad");
